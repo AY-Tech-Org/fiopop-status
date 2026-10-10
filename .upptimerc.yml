@@ -27,7 +27,7 @@ sites:
   # TEMPORARY: a deliberate outage to test the Discord alert. Remove after.
   - name: Discord alert test
     url: https://admin.fiopop.com/health
-    __dangerous__body_down_if_text_missing: 'simulated-outage'
+    __dangerous__body_down_if_text_missing: '"ok":true'
 
 status-website:
   cname: status.fiopop.com
