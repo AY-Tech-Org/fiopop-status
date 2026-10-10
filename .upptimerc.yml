@@ -1,31 +1,50 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Upptime (https://upptime.js.org) — the uptime monitor for every Fiopop platform.
+# Checks run on GitHub Actions every 5 minutes; an outage opens an issue here,
+# posts to Discord (secrets NOTIFICATION_DISCORD_WEBHOOK*), and shows on
+# https://status.fiopop.com. Add a platform: one entry under `sites`.
+owner: AY-Tech-Org
+repo: fiopop-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Fiopop Mass — app
+    url: https://mass.fiopop.com
+  - name: Fiopop Mass — API
+    url: https://api.fiopop.com/health
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: Fiopop Management
+    url: https://manage.fiopop.com/api/v1/health
+    __dangerous__body_down_if_text_missing: '"ok":true'
+  # The current production address until the Management switch; afterwards it
+  # only redirects to manage.fiopop.com — remove this entry then.
+  - name: Fiopop Management — atlas.app (until the move)
+    url: https://atlas.app.fiopop.com/api/v1/health
+    __dangerous__body_down_if_text_missing: '"ok":true'
+  - name: Fiopop Admin console
+    url: https://admin.fiopop.com/health
+    __dangerous__body_down_if_text_missing: '"ok":true'
+  - name: Fiopop — landing page
+    url: https://fiopop.com
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.fiopop.com
+  name: Fiopop Status
+  introTitle: "Fiopop platform status"
+  introMessage: Live status of Fiopop Mass, Fiopop Management and fiopop.com, checked every 5 minutes.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: fiopop.com
+      href: https://fiopop.com
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  responseTime: "0 23 * * *"
+  graphs: "0 0 * * *"
+  summary: "0 0 * * *"
+  staticSite: "0 1 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "0 3 * * *"
+
+i18n:
+  activeIncidents: Active incidents
+  allSystemsOperational: All systems operational
