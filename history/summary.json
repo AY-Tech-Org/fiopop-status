@@ -113,18 +113,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/admin.fiopop.com.ico",
     "slug": "discord-alert-test",
     "status": "up",
-    "uptime": "6.11%",
-    "uptimeDay": "6.11%",
-    "uptimeWeek": "6.11%",
-    "uptimeMonth": "6.11%",
-    "uptimeYear": "6.11%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 418,
     "timeDay": 418,
     "timeWeek": 418,
     "timeMonth": 418,
     "timeYear": 418,
-    "dailyMinutesDown": {
-      "2026-10-10": 5
-    }
+    "dailyMinutesDown": {}
   }
 ]
