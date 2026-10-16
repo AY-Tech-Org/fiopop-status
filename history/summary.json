@@ -22,18 +22,20 @@
     "url": "https://api.fiopop.com/health",
     "icon": "https://icons.duckduckgo.com/ip3/api.fiopop.com.ico",
     "slug": "fiopop-mass-api",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 450,
-    "timeDay": 429,
-    "timeWeek": 450,
-    "timeMonth": 450,
-    "timeYear": 450,
-    "dailyMinutesDown": {}
+    "time": 451,
+    "timeDay": 448,
+    "timeWeek": 451,
+    "timeMonth": 451,
+    "timeYear": 451,
+    "dailyMinutesDown": {
+      "2026-10-16": 0
+    }
   },
   {
     "name": "Fiopop Management",
