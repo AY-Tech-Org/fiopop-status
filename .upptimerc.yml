@@ -11,11 +11,22 @@ sites:
   - name: Fiopop Mass — API
     url: https://api.fiopop.com/health
     __dangerous__body_down_if_text_missing: '"status":"ok"'
+  # Our own cloud Management (no customers yet). The name is kept as it is:
+  # Upptime files history under it, so renaming it would orphan the graphs.
   - name: Fiopop Management
     url: https://manage.fiopop.com/api/v1/health
     __dangerous__body_down_if_text_missing: '"ok":true'
-  # The current production address until the Management switch; afterwards it
-  # only redirects to manage.fiopop.com — remove this entry then.
+  # Sanivor's own server since 2026-10-17 (manage-fiopop ADR-121/124) — the
+  # Management installation a customer actually uses. Once it runs the
+  # readiness fixes (manage-fiopop docs/PRODUCTION_READINESS.md), /api/v1/health
+  # pings MongoDB, so a box that is up but cannot reach its data answers 503
+  # and shows here as down.
+  - name: Fiopop Management — Sanivor
+    url: https://manage.sanivor.ch/api/v1/health
+    __dangerous__body_down_if_text_missing: '"ok":true'
+  # The old production address. It answers 308 to Sanivor's domain (links in
+  # mails already sent), so this check follows that redirect — keep it while
+  # the redirect matters; the entry above is Sanivor's real monitor.
   - name: Fiopop Management — atlas.app (until the move)
     url: https://atlas.app.fiopop.com/api/v1/health
     __dangerous__body_down_if_text_missing: '"ok":true'
